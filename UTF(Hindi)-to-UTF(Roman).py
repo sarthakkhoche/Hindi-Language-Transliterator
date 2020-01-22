@@ -32,7 +32,7 @@ dict = {
 '\u0908' : '\u0069', #i
 '\u0908' : '\u0069', #i ki matra
 '\u090e' : '\u0065', #e ki matra
-'\u0913' : '\u006f' #e ki matra
+'\u0913' : '\u006f', #e ki matra
 '\u0909' : '\u0075', #e ki matra
 }
 
