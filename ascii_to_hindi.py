@@ -3,6 +3,7 @@ from nltk.tokenize import word_tokenize
 vowels = ['a','i','o','e','u']
 
 global_flag = False
+
 def tokenize(text):
     return word_tokenize(text)
 
@@ -23,7 +24,12 @@ def convert_to_unicode(word):
             if((akshara[1:]+'a') in it3_to_utf.keys()):
                 unicode += it3_to_utf[(akshara[1:]+'a')]
 
-    #MARTRA CHECK
+    if(len(akshara) == 1):
+        if((akshara+'a') in it3_to_utf.keys()):
+            unicode += it3_to_utf[(akshara+'a')]
+            unicode += '+'
+
+    #MATRA CHECK
 
     if(matra in matras.keys()):
         global_flag = True
@@ -40,12 +46,14 @@ def convert_to_unicode(word):
 def hinglish_to_hindi(text):
     words = tokenize(text)
 
+    global_flag = False
     final_sentence_unicode = ''
     for i in words:
         word = ""
         unicode = ''
         flag = False
-        for j in range(0,len(i)):
+        j=0
+        while (j <len(i)):
             if(i[j] in vowels):
                 word += i[j]
                 if(j+1 < len(i)):
@@ -54,10 +62,13 @@ def hinglish_to_hindi(text):
                 unicode += convert_to_unicode(word)
                 unicode += '+'
                 word = ""
+                if(global_flag == True):
+                    j +=1
+                    global_flag=False
             else:
                 flag = True
                 word += i[j]
-
+            j+=1
         final_sentence_unicode += unicode[:-1]
         final_sentence_unicode += " "
     print(final_sentence_unicode)
@@ -119,4 +130,5 @@ it3_to_utf = {
 
 
 if __name__ == "__main__":
-    hinglish_to_hindi("phaada")
+
+    hinglish_to_hindi("naanaa")
