@@ -87,7 +87,7 @@ def convert_to_unicode(word):
                 i+=1
             else:
                 if (word[i:(i+2)] in matras.keys()):
-                    unicode += it3_to_utf[word[j:i]] + matras[word[i:(i+2)]]  
+                    unicode += it3_to_utf[word[j:i]] + matras[word[i:(i+2)]]
                     i += 2
                     j = i
                 elif (word[i] in matras.keys()):
@@ -115,5 +115,5 @@ def hinglish_to_hindi(text):
         final_sentence_unicode += " "
     print(final_sentence_unicode)
 
-if __name__ == "__main__":    
-    hinglish_to_hindi("kakshaa")        
+if __name__ == "__main__":
+    hinglish_to_hindi("brahma")
