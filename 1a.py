@@ -146,3 +146,9 @@ def hinglish_to_hindi(text):
 
 if __name__ == "__main__":    
     hinglish_to_hindi("kakSha")
+    hinglish_to_hindi("brahma")
+    hinglish_to_hindi("sarthak")
+    hinglish_to_hindi("gandharv")
+    hinglish_to_hindi("strii")
+    hinglish_to_hindi("kakSha")
+    hinglish_to_hindi("shareeph")
