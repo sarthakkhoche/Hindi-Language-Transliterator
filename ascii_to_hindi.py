@@ -72,14 +72,16 @@ def hinglish_to_hindi(text):
         final_sentence_unicode += unicode[:-1]
         final_sentence_unicode += " "
     print(final_sentence_unicode)
+    
 matras = {
-    'aa': '\u093B',
+    'aa': '\u093E',
     'i' : '\u093F',
     'e' : '\u093F',
     'ee': '\u0940',
     'u' : '\u0941',
     'oo': '\u0942',
     'ae': '\u0947',
+    'ai': '\u0948',
     'o' : '\u094B',
     'ow': '\u094C',
 }
@@ -92,6 +94,7 @@ it3_to_utf = {
     'u': '\u0909',
     'uu': '\u090a',
     'e': '\u090f',
+    'ai': '\u0910',
     'o': '\u0913',
     'au': '\u0914',
     'ka': '\u0915',
