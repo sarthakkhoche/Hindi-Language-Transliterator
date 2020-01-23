@@ -33,9 +33,6 @@ it3_to_utf = {
     's': '\u0938',
     'h': '\u0939',
     'ph': '\u095e',
-    # 'ksh': '\u0915'+'\u094d'+'\u0937',
-    # 'tr': '\u0924'+'\u094d'+'\u0930',
-    # 'br': '\u092c'+'\u094d'+'\u0930',
     'z': '\u095b'
 }
 
@@ -57,7 +54,6 @@ first = {
 matras = {
     'aa': '\u093E',
     'i' : '\u093F',
-    # 'e' : '\u093F',
     'ee': '\u0940',
     'ii': '\u0940',
     'u' : '\u0941',
@@ -88,7 +84,7 @@ def convert_to_unicode(word):
     
     if (word[-2:] in matras.keys()):
         pass
-    elif (word[-1:] in matras.keys()):
+    elif (word[-1:] in matras.keys() or word[-1:] == 'a'):
         pass
     else:
         word += 'a'
@@ -118,9 +114,6 @@ def convert_to_unicode(word):
                     unicode += it3_to_utf[word[j:(i-2)]] + '\u094d'
                     j += 1
             elif (word[i] == 'a'):
-#                 unicode += it3_to_utf[word[j:i]]
-#                 i += 1
-#                 j = i
                 if (word[j:i] in it3_to_utf.keys()):
                     unicode += it3_to_utf[word[j:i]]  
                     i += 1
@@ -131,9 +124,6 @@ def convert_to_unicode(word):
                 elif (word[j:(i-2)] in it3_to_utf.keys()):
                     unicode += it3_to_utf[word[j:(i-2)]] + '\u094d'
                     j += 1
-            
-        # elif (((i-j) < 2)):
-        #     i += 1
         else:
             i += 1
     
@@ -155,4 +145,4 @@ def hinglish_to_hindi(text):
     print(final_sentence_unicode)
 
 if __name__ == "__main__":    
-    hinglish_to_hindi("brahma")              
+    hinglish_to_hindi("kakSha")
